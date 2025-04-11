@@ -11,8 +11,9 @@ const config = {
   type: Phaser.AUTO,
   width: 1920,
   height: 1000,
-  backgroundColor: 0x5f6e7a,
+  backgroundColor: '#5F6E7A',
 }
+
 // Setting the gmae
 const game = new Phaser.Game()
 console.log(game)
