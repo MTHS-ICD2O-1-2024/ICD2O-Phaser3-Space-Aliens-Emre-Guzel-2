@@ -1,4 +1,4 @@
-/* global Phaser*/ 
+/* global Phaser*/
 
 // Copyright (c) 2020 Mr. Coxall All rights reserved
 //
@@ -10,10 +10,9 @@
 const config = {
   type: Phaser.AUTO,
   width: 1920,
-  height: 1000,
-  backgroundColor: '#5F6E7A',
+  length: 1080,
+  backgroundColor: 0x5f6e7a
 }
 
-// Setting the gmae
-const game = new Phaser.Game()
+const game = new Phaser.Game(config)
 console.log(game)
