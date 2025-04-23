@@ -1,28 +1,27 @@
 /* global Phaser */
 
-// Copyright (c) 2025 kyle.matthew.magnaye All rights reserved
+// Copyright (c) 2025 yi.zhou All rights reserved
 //
-// Created by: kyle.matthew.magnaye
-// Created on: Apirl 17 2025 
+// Created by: Emre Guzel
+// Created on: Apr 2025 
 // This is the Splash Scene
 
 class SpashScene extends Phaser.Scene {
-    constructor () {
-      super({ key: 'spashScene' })
-    }
-  
-    init (data) {
-      this.cameras.main.setBackgroundColor('#ffffff')
-    }
-  
-    preload () {
-      console.log('Spash Scene')
-    }
-  
-    create (data) {
-    }
-  
-    update (time, delta) {
-    }
+  constructor() {
+    super({ key: 'spashScene' })
   }
-  export default SpashScene
+
+  init(data) {
+    this.cameras.main.setBackgroundColor('ffffff')
+  }
+
+  preload() {
+    console.log('Splash Scene')
+  }
+  create(data) {
+  }
+  update(time, delta) {
+    this.scene.switch("titleScene")
+  }
+}
+export default SpashScene
