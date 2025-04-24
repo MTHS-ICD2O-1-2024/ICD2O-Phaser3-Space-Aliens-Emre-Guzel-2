@@ -1,6 +1,6 @@
 /* global Phaser */
 
-// Copyright (c) 2025 yi.zhou All rights reserved
+// Copyright (c) 2025 Emre Guzel All rights reserved
 //
 // Created by: Emre Guzel
 // Created on: Apr 2025 
