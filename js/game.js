@@ -7,7 +7,7 @@
 // This file contains the JS functions for index.html
 
 // Setting the window 
-import SplashScene from "./splashScene.js"
+import SplashScene from "./SplashScene.js"
 import TitleScene from "./titleScene.js"
 
 const splashScene = new SplashScene()
@@ -24,7 +24,7 @@ const config = {
     },
 
   },
-  backgroundColor: 0x5f6e7a,
+  backgroundColor: 0xffffff,
   scale: {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
@@ -33,7 +33,8 @@ const config = {
 
 const game = new Phaser.Game(config)
 
-game.scene.add('splashScene ', splashScene)
-game.scene.add('titleScene ', titleScene)
+game.scene.add("splashScene", splashScene)
+game.scene.add("titleScene", titleScene)
 
 game.scene.start("splashScene")
+
