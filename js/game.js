@@ -1,49 +1,47 @@
-/* global Phaser */
+/* global Phaser*/
 
-// Copyright (c) 2025 Emre Guzel All rights reserved
+// Copyright (c) 2020 Mr. Coxall All rights reserved
 //
 // Created by: Emre Guzel
-// Created on: Apr 30 2025
-// This is the Title Scene
+// Created on: Apr 2025
+// This file contains the JS functions for index.html
 
-class TitleScene extends Phaser.Scene {
-  constructor() {
-    super({ key: 'titleScene' })
-    //Setup
-    this.titleSceneBackgroundImage = null
-    this.titleSceneText = null
-    this.titleSceneTextStyle = {
-      font: "200px Times",
-      fill: "#fde4b9",
-      align: "center",
-    }
-  }
-  // Setting the background 
-  init(data) {
-    this.cameras.main.setBackgroundColor("#ffffff")
-  }
-  // Setting the IMG
-  preload() {
-    console.log("Title Scene")
-    this.load.image("titleSceneBackground", "assets/aliens_screen_image.jpg")
-  }
-  // Setting the IMG directoins 
-  create(data) {
-    this.titleSceneBackgroundImage = this.add.sprite(
-      0,
-      0,
-      "titleSceneBackground").setScale(2.75)
-    this.titleSceneBackgroundImage.x = 1920 / 2
-    this.titleSceneBackgroundImage.y = 1080 / 2
+// Setting the window 
+import SplashScene from "./SplashScene.js"
+import TitleScene from "./titleScene.js"
+import MenuScene from './menuScene.js'
+import GameScene from "./gameScene.js"
 
-    // Setting the text
-    this.titleSceneText = this.add
-      .text(1920 / 2, 1080 / 2 + 350, "Space Aliens", this.titleSceneTextStyle)
-      .setOrigin(0.5)
-  }
+// Our game scenes 
+const splashScene = new SplashScene()
+const titleScene = new TitleScene()
+const menuScene = new MenuScene()
+const gameScene = new GameScene()
 
-  update(time, delta) {
-  }
+const config = {
+  type: Phaser.AUTO,
+  width: 1920,
+  height: 1080,
+  physics: {
+    default: "arcade",
+    arcade: {
+      debug: true,
+    },
+
+  },
+  backgroundColor: 0xffffff,
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+  },
 }
 
-export default TitleScene
+const game = new Phaser.Game(config)
+
+game.scene.add("splashScene", splashScene)
+game.scene.add("titleScene", titleScene)
+game.scene.add('menuScene', menuScene)
+game.scene.add("gameScene", gameScene)
+
+game.scene.start("splashScene")
+
